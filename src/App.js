@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useState } from 'react';
+import PickerWheel from './components/PickerWheel';
+import InputList from './components/InputList';
 
 function App() {
+  const [items, setItems] = useState([]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex gap-20 py-20 mx-20 items-center container my-12">
+      <div><PickerWheel items={items} /></div>
+      <div><InputList items={items} setItems={setItems} /></div>
     </div>
   );
 }
